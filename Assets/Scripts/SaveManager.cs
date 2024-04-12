@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
     private void Start()
     {
+        //ResetSave();
         LoadGame();
         AutoSave();
     }
@@ -36,5 +38,14 @@ public class SaveManager : MonoBehaviour
     void AutoSave()
     {
         Invoke("SaveGame", 5);
+    }
+
+    void ResetSave()
+    {
+        GameManager.dinheiro = 0;
+        GameManager.clicadores = 0;
+        GameManager.custoClicador = 25;
+        GameManager.multiplicadores = 1;
+        GameManager.custoMultiplicador = 90;
     }
 }
